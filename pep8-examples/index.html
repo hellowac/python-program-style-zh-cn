@@ -1,0 +1,2007 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="hellowac-类型检查">
+      
+      
+      
+      
+        <link rel="prev" href="../pep8/">
+      
+      
+        <link rel="next" href="../pre-commit/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>编码风格样例 - python编码风格指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pep-8---风格代码例子" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+你当前浏览的版本已不是最新版本，
+<a href="../..">
+    <strong>点击这里</strong>
+</a>查看最新版本的文档
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="python编码风格指南" class="md-header__button md-logo" aria-label="python编码风格指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            python编码风格指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              编码风格样例
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hellowac/python-program-style-zh-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hellowac/python-program-style-zh-cn
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  python编码风格指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../naming-abbr/" class="md-tabs__link">
+        
+  
+    
+  
+  命名和缩写
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pep8/" class="md-tabs__link">
+        
+  
+    
+  
+  编码风格
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  编码风格样例
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pre-commit/" class="md-tabs__link">
+        
+  
+    
+  
+  风格维护工具
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="python编码风格指南" class="md-nav__button md-logo" aria-label="python编码风格指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    python编码风格指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hellowac/python-program-style-zh-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hellowac/python-program-style-zh-cn
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python编码风格指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../naming-abbr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命名和缩写
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编码风格
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    编码风格样例
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    编码风格样例
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#变量交换" class="md-nav__link">
+    变量交换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#列表推导" class="md-nav__link">
+    列表推导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#单行表达式" class="md-nav__link">
+    单行表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#带索引遍历" class="md-nav__link">
+    带索引遍历
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#字符串拼接" class="md-nav__link">
+    字符串拼接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#真假判断" class="md-nav__link">
+    真假判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#访问字典元素" class="md-nav__link">
+    访问字典元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#操作列表" class="md-nav__link">
+    操作列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#文件读取" class="md-nav__link">
+    文件读取
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#代码续行" class="md-nav__link">
+    代码续行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#显式代码" class="md-nav__link">
+    显式代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#使用占位符" class="md-nav__link">
+    使用占位符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#链式比较" class="md-nav__link">
+    链式比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三目运算" class="md-nav__link">
+    三目运算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or赋值" class="md-nav__link">
+    or赋值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python3-新特性" class="md-nav__link">
+    Python3 新特性
+  </a>
+  
+    <nav class="md-nav" aria-label="Python3 新特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#和解构" class="md-nav__link">
+    *和**解构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#字符串格式化" class="md-nav__link">
+    字符串格式化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f字符串支持用" class="md-nav__link">
+    f字符串支持用=
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#字典新增合并运算" class="md-nav__link">
+    字典新增合并运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#数字加下划线" class="md-nav__link">
+    数字加下划线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#类型标注" class="md-nav__link">
+    类型标注
+  </a>
+  
+    <nav class="md-nav" aria-label="类型标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#变量标注" class="md-nav__link">
+    变量标注
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#类型别名" class="md-nav__link">
+    类型别名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#标准库" class="md-nav__link">
+    标准库
+  </a>
+  
+    <nav class="md-nav" aria-label="标准库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    csv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    io
+  </a>
+  
+    <nav class="md-nav" aria-label="io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#文本io" class="md-nav__link">
+    文本IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#二进制-io" class="md-nav__link">
+    二进制 I/O
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collections-常用容器" class="md-nav__link">
+    collections 常用容器
+  </a>
+  
+    <nav class="md-nav" aria-label="collections 常用容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chainmap" class="md-nav__link">
+    ChainMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    Counter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultdict" class="md-nav__link">
+    defaultdict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namedtuple" class="md-nav__link">
+    namedtuple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#内置函数" class="md-nav__link">
+    内置函数
+  </a>
+  
+    <nav class="md-nav" aria-label="内置函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    zip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted" class="md-nav__link">
+    sorted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum" class="md-nav__link">
+    sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getattr" class="md-nav__link">
+    getattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setattr" class="md-nav__link">
+    setattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasattr" class="md-nav__link">
+    hasattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerate" class="md-nav__link">
+    enumerate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#项目实战" class="md-nav__link">
+    项目实战
+  </a>
+  
+    <nav class="md-nav" aria-label="项目实战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#代码优化1" class="md-nav__link">
+    代码优化1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风格维护工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#变量交换" class="md-nav__link">
+    变量交换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#列表推导" class="md-nav__link">
+    列表推导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#单行表达式" class="md-nav__link">
+    单行表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#带索引遍历" class="md-nav__link">
+    带索引遍历
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#字符串拼接" class="md-nav__link">
+    字符串拼接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#真假判断" class="md-nav__link">
+    真假判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#访问字典元素" class="md-nav__link">
+    访问字典元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#操作列表" class="md-nav__link">
+    操作列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#文件读取" class="md-nav__link">
+    文件读取
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#代码续行" class="md-nav__link">
+    代码续行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#显式代码" class="md-nav__link">
+    显式代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#使用占位符" class="md-nav__link">
+    使用占位符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#链式比较" class="md-nav__link">
+    链式比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三目运算" class="md-nav__link">
+    三目运算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or赋值" class="md-nav__link">
+    or赋值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python3-新特性" class="md-nav__link">
+    Python3 新特性
+  </a>
+  
+    <nav class="md-nav" aria-label="Python3 新特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#和解构" class="md-nav__link">
+    *和**解构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#字符串格式化" class="md-nav__link">
+    字符串格式化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f字符串支持用" class="md-nav__link">
+    f字符串支持用=
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#字典新增合并运算" class="md-nav__link">
+    字典新增合并运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#数字加下划线" class="md-nav__link">
+    数字加下划线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#类型标注" class="md-nav__link">
+    类型标注
+  </a>
+  
+    <nav class="md-nav" aria-label="类型标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#变量标注" class="md-nav__link">
+    变量标注
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#类型别名" class="md-nav__link">
+    类型别名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#标准库" class="md-nav__link">
+    标准库
+  </a>
+  
+    <nav class="md-nav" aria-label="标准库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    csv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    io
+  </a>
+  
+    <nav class="md-nav" aria-label="io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#文本io" class="md-nav__link">
+    文本IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#二进制-io" class="md-nav__link">
+    二进制 I/O
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collections-常用容器" class="md-nav__link">
+    collections 常用容器
+  </a>
+  
+    <nav class="md-nav" aria-label="collections 常用容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chainmap" class="md-nav__link">
+    ChainMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    Counter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultdict" class="md-nav__link">
+    defaultdict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namedtuple" class="md-nav__link">
+    namedtuple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#内置函数" class="md-nav__link">
+    内置函数
+  </a>
+  
+    <nav class="md-nav" aria-label="内置函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    zip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted" class="md-nav__link">
+    sorted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum" class="md-nav__link">
+    sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getattr" class="md-nav__link">
+    getattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setattr" class="md-nav__link">
+    setattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasattr" class="md-nav__link">
+    hasattr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerate" class="md-nav__link">
+    enumerate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#项目实战" class="md-nav__link">
+    项目实战
+  </a>
+  
+    <nav class="md-nav" aria-label="项目实战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#代码优化1" class="md-nav__link">
+    代码优化1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="pep-8---风格代码例子">PEP 8 - 风格代码例子<a class="headerlink" href="#pep-8---风格代码例子" title="Permanent link">&para;</a></h1>
+<p>pep8-examples.md# 编码样式指南</p>
+<h2 id="变量交换">变量交换<a class="headerlink" href="#变量交换" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+tmp <span style="color: #666666">=</span> a
+a <span style="color: #666666">=</span> b
+b <span style="color: #666666">=</span> tmp
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+a,b <span style="color: #666666">=</span> b,a
+</code></pre></div>
+<h2 id="列表推导">列表推导<a class="headerlink" href="#列表推导" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+my_list <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>):
+    my_list<span style="color: #666666">.</span>append(i<span style="color: #666666">*2</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+my_list <span style="color: #666666">=</span> [i<span style="color: #666666">*2</span> <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">10</span>)]
+</code></pre></div>
+<h2 id="单行表达式">单行表达式<a class="headerlink" href="#单行表达式" title="Permanent link">&para;</a></h2>
+<p>虽然列表推导式由于其简洁性及表达性，被广受推崇。</p>
+<p>但是有许多可以写成单行的表达式，并不是好的做法。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000">print</span> <span style="color: #BA2121">&#39;one&#39;</span>; <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;two&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> x <span style="color: #666666">==</span> <span style="color: #666666">1</span>: <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;one&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">&lt;</span><span style="color: #008000">complex</span> comparison<span style="color: #666666">&gt;</span> <span style="color: #AA22FF; font-weight: bold">and</span> <span style="color: #666666">&lt;</span>other <span style="color: #008000">complex</span> comparison<span style="color: #666666">&gt;</span>:
+    <span style="color: #3D7B7B; font-style: italic"># do something</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+<span style="color: #008000">print</span> <span style="color: #BA2121">&#39;one&#39;</span>
+<span style="color: #008000">print</span> <span style="color: #BA2121">&#39;two&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> x <span style="color: #666666">==</span> <span style="color: #666666">1</span>:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;one&#39;</span>
+
+cond1 <span style="color: #666666">=</span> <span style="color: #666666">&lt;</span><span style="color: #008000">complex</span> comparison<span style="color: #666666">&gt;</span>
+cond2 <span style="color: #666666">=</span> <span style="color: #666666">&lt;</span>other <span style="color: #008000">complex</span> comparison<span style="color: #666666">&gt;</span>
+<span style="color: #008000; font-weight: bold">if</span> cond1 <span style="color: #AA22FF; font-weight: bold">and</span> cond2:
+    <span style="color: #3D7B7B; font-style: italic"># do something</span>
+</code></pre></div>
+<h2 id="带索引遍历">带索引遍历<a class="headerlink" href="#带索引遍历" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(my_list)):
+    <span style="color: #008000">print</span>(i, <span style="color: #BA2121">&quot;--&gt;&quot;</span>, my_list[i])
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+<span style="color: #008000; font-weight: bold">for</span> i,item <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(my_list):
+    <span style="color: #008000">print</span>(i, <span style="color: #BA2121">&quot;--&gt;&quot;</span>,item)
+</code></pre></div>
+<h2 id="字符串拼接">字符串拼接<a class="headerlink" href="#字符串拼接" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+letters <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;s&#39;</span>, <span style="color: #BA2121">&#39;p&#39;</span>, <span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #BA2121">&#39;m&#39;</span>]
+s<span style="color: #666666">=</span><span style="color: #BA2121">&quot;&quot;</span>
+<span style="color: #008000; font-weight: bold">for</span> let <span style="color: #AA22FF; font-weight: bold">in</span> letters:
+    s <span style="color: #666666">+=</span> let
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+letters <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;s&#39;</span>, <span style="color: #BA2121">&#39;p&#39;</span>, <span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #BA2121">&#39;m&#39;</span>]
+word <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;&#39;</span><span style="color: #666666">.</span>join(letters)
+</code></pre></div>
+<h2 id="真假判断">真假判断<a class="headerlink" href="#真假判断" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000; font-weight: bold">if</span> attr <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">True</span>:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;True!&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> attr <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">None</span>:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;attr is None!&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+<span style="color: #008000; font-weight: bold">if</span> attr:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;attr is truthy!&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> attr:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;attr is falsey!&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> attr <span style="color: #AA22FF; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span>:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;attr is None!&#39;</span>
+</code></pre></div>
+<p>真假值对照表：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>False</th>
+<th>True</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>布尔</td>
+<td>False(与0等价)</td>
+<td>True(与1等价)</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>""(空字符串)</td>
+<td>非空字符串，例如 " ", "blog"</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>0, 0.0</td>
+<td>非0的数值，例如：1, 0.1, -1, 2</td>
+</tr>
+<tr>
+<td>容器</td>
+<td>[], (),</td>
+<td>至少有一个元素的容器对象，例如：[0],(None,),['']</td>
+</tr>
+<tr>
+<td>None</td>
+<td>None</td>
+<td>非None对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="访问字典元素">访问字典元素<a class="headerlink" href="#访问字典元素" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+
+d <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;hello&#39;</span>: <span style="color: #BA2121">&#39;world&#39;</span>}
+<span style="color: #008000; font-weight: bold">if</span> d<span style="color: #666666">.</span>has_key(<span style="color: #BA2121">&#39;hello&#39;</span>):
+    <span style="color: #008000">print</span> d[<span style="color: #BA2121">&#39;hello&#39;</span>]    <span style="color: #3D7B7B; font-style: italic"># prints &#39;world&#39;</span>
+<span style="color: #008000; font-weight: bold">else</span>:
+    <span style="color: #008000">print</span> <span style="color: #BA2121">&#39;default_value&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+d <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;hello&#39;</span>: <span style="color: #BA2121">&#39;world&#39;</span>}
+
+<span style="color: #008000">print</span> d<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;hello&#39;</span>, <span style="color: #BA2121">&#39;default_value&#39;</span>) <span style="color: #3D7B7B; font-style: italic"># prints &#39;world&#39;</span>
+<span style="color: #008000">print</span> d<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;thingy&#39;</span>, <span style="color: #BA2121">&#39;default_value&#39;</span>) <span style="color: #3D7B7B; font-style: italic"># prints &#39;default_value&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Or:</span>
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #BA2121">&#39;hello&#39;</span> <span style="color: #AA22FF; font-weight: bold">in</span> d:
+    <span style="color: #008000">print</span> d[<span style="color: #BA2121">&#39;hello&#39;</span>]
+</code></pre></div>
+<h2 id="操作列表">操作列表<a class="headerlink" href="#操作列表" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+
+a <span style="color: #666666">=</span> [<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>]
+b <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> a:
+    <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">&gt;</span> <span style="color: #666666">4</span>:
+        b<span style="color: #666666">.</span>append(i)
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+a <span style="color: #666666">=</span> [<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>]
+b <span style="color: #666666">=</span> [i <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> a <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">&gt;</span> <span style="color: #666666">4</span>]
+<span style="color: #3D7B7B; font-style: italic"># Or:</span>
+b <span style="color: #666666">=</span> <span style="color: #008000">filter</span>(<span style="color: #008000; font-weight: bold">lambda</span> x: x <span style="color: #666666">&gt;</span> <span style="color: #666666">4</span>, a)
+Bad
+
+a <span style="color: #666666">=</span> [<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>]
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(a)):
+    a[i] <span style="color: #666666">+=</span> <span style="color: #666666">3</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+a <span style="color: #666666">=</span> [<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>]
+a <span style="color: #666666">=</span> [i <span style="color: #666666">+</span> <span style="color: #666666">3</span> <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> a]
+<span style="color: #3D7B7B; font-style: italic"># Or:</span>
+a <span style="color: #666666">=</span> <span style="color: #008000">map</span>(<span style="color: #008000; font-weight: bold">lambda</span> i: i <span style="color: #666666">+</span> <span style="color: #666666">3</span>, a)
+</code></pre></div>
+<h2 id="文件读取">文件读取<a class="headerlink" href="#文件读取" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+
+f <span style="color: #666666">=</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;file.txt&#39;</span>)
+a <span style="color: #666666">=</span> f<span style="color: #666666">.</span>read()
+<span style="color: #008000">print</span> a
+f<span style="color: #666666">.</span>close()
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+<span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;file.txt&#39;</span>) <span style="color: #008000; font-weight: bold">as</span> f:
+    <span style="color: #008000; font-weight: bold">for</span> line <span style="color: #AA22FF; font-weight: bold">in</span> f:
+        <span style="color: #008000">print</span> line
+</code></pre></div>
+<h2 id="代码续行">代码续行<a class="headerlink" href="#代码续行" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+my_very_big_string <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;&quot;For a long time I used to go to bed early. Sometimes, </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BA2121">    when I had put out my candle, my eyes would close so quickly that I had not even </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BA2121">    time to say “I’m going to sleep.”&quot;&quot;&quot;</span>
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">some.deep.module.inside.a.module</span> <span style="color: #008000; font-weight: bold">import</span> a_nice_function, another_nice_function, \
+    yet_another_nice_function
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+my_very_big_string <span style="color: #666666">=</span> (
+    <span style="color: #BA2121">&quot;For a long time I used to go to bed early. Sometimes, &quot;</span>
+    <span style="color: #BA2121">&quot;when I had put out my candle, my eyes would close so quickly &quot;</span>
+    <span style="color: #BA2121">&quot;that I had not even time to say “I’m going to sleep.”&quot;</span>
+)
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">some.deep.module.inside.a.module</span> <span style="color: #008000; font-weight: bold">import</span> (
+    a_nice_function, another_nice_function, yet_another_nice_function)
+</code></pre></div>
+<h2 id="显式代码">显式代码<a class="headerlink" href="#显式代码" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">make_complex</span>(<span style="color: #666666">*</span>args):
+    x, y <span style="color: #666666">=</span> args
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">dict</span>(<span style="color: #666666">**</span><span style="color: #008000">locals</span>())
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">make_complex</span>(x, y):
+    <span style="color: #008000; font-weight: bold">return</span> {<span style="color: #BA2121">&#39;x&#39;</span>: x, <span style="color: #BA2121">&#39;y&#39;</span>: y}
+</code></pre></div>
+<h2 id="使用占位符">使用占位符<a class="headerlink" href="#使用占位符" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+filename <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;foobar.txt&#39;</span>
+basename, _, ext <span style="color: #666666">=</span> filename<span style="color: #666666">.</span>rpartition(<span style="color: #BA2121">&#39;.&#39;</span>)
+</code></pre></div>
+<h2 id="链式比较">链式比较<a class="headerlink" href="#链式比较" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000; font-weight: bold">if</span> age <span style="color: #666666">&gt;</span> <span style="color: #666666">18</span> <span style="color: #AA22FF; font-weight: bold">and</span> age <span style="color: #666666">&lt;</span> <span style="color: #666666">60</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;young man&quot;</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">18</span> <span style="color: #666666">&lt;</span> age <span style="color: #666666">&lt;</span> <span style="color: #666666">60</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;young man&quot;</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># 理解了链式比较操作，那么你应该知道为什么下面这行代码输出的结果是 False</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">False</span> <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">False</span> <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">True</span> 
+<span style="color: #008000; font-weight: bold">False</span>
+</code></pre></div>
+<h2 id="三目运算">三目运算<a class="headerlink" href="#三目运算" title="Permanent link">&para;</a></h2>
+<p>这个保留意见。随使用习惯就好。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Bad</span>
+<span style="color: #008000; font-weight: bold">if</span> a <span style="color: #666666">&gt;</span> <span style="color: #666666">2</span>:
+    b <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+<span style="color: #008000; font-weight: bold">else</span>:
+    b <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+<span style="color: #3D7B7B; font-style: italic">#b = 2</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+a <span style="color: #666666">=</span> <span style="color: #666666">3</span>   
+
+b <span style="color: #666666">=</span> <span style="color: #666666">2</span> <span style="color: #008000; font-weight: bold">if</span> a <span style="color: #666666">&gt;</span> <span style="color: #666666">2</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">1</span>
+<span style="color: #3D7B7B; font-style: italic">#b = 2</span>
+</code></pre></div>
+<h2 id="or赋值">or赋值<a class="headerlink" href="#or赋值" title="Permanent link">&para;</a></h2>
+<p>某些情况下，<code>or</code>可以替换<code>if else</code> 达到代码简化的作用，比如在变量赋值时, 并且支持链式调用</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 基本用法</span>
+v <span style="color: #666666">=</span> p1 <span style="color: #AA22FF; font-weight: bold">or</span> p2
+<span style="color: #3D7B7B; font-style: italic"># v = p1 if p1 else p2</span>
+
+<span style="color: #3D7B7B; font-style: italic"># 链式用法, 直到找到为真的值来赋值，否则赋值最后的值</span>
+v <span style="color: #666666">=</span> p1 <span style="color: #AA22FF; font-weight: bold">or</span> p2 <span style="color: #AA22FF; font-weight: bold">or</span> p3 <span style="color: #AA22FF; font-weight: bold">or</span> default
+
+<span style="color: #3D7B7B; font-style: italic"># if p1:</span>
+<span style="color: #3D7B7B; font-style: italic">#     v = p1</span>
+<span style="color: #3D7B7B; font-style: italic"># elif p2:</span>
+<span style="color: #3D7B7B; font-style: italic">#     v = p2</span>
+<span style="color: #3D7B7B; font-style: italic"># elif p3:</span>
+<span style="color: #3D7B7B; font-style: italic">#     v = p3</span>
+<span style="color: #3D7B7B; font-style: italic"># else:</span>
+<span style="color: #3D7B7B; font-style: italic">#     v = defualt</span>
+</code></pre></div>
+<h2 id="python3-新特性">Python3 新特性<a class="headerlink" href="#python3-新特性" title="Permanent link">&para;</a></h2>
+<h3 id="和解构">*和**解构<a class="headerlink" href="#和解构" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Pythonic</span>
+
+a, <span style="color: #666666">*</span>rest <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>]
+<span style="color: #3D7B7B; font-style: italic"># a = 1, rest = [2, 3]</span>
+
+a, <span style="color: #666666">*</span>middle, c <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>]
+<span style="color: #3D7B7B; font-style: italic"># a = 1, middle = [2, 3], c = 4</span>
+
+<span style="color: #3D7B7B; font-style: italic"># 解构字典和列表</span>
+<span style="color: #008000">print</span>(<span style="color: #666666">*</span>[<span style="color: #666666">1</span>], <span style="color: #666666">*</span>[<span style="color: #666666">2</span>], <span style="color: #666666">3</span>, <span style="color: #666666">*</span>[<span style="color: #666666">4</span>, <span style="color: #666666">5</span>])
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">fn</span>(a, b, c, d):
+    <span style="color: #008000">print</span>(a, b, c, d)
+
+fn(<span style="color: #666666">**</span>{<span style="color: #BA2121">&#39;a&#39;</span>: <span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;c&#39;</span>: <span style="color: #666666">3</span>}, <span style="color: #666666">**</span>{<span style="color: #BA2121">&#39;b&#39;</span>: <span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;d&#39;</span>: <span style="color: #666666">4</span>})
+
+<span style="color: #3D7B7B; font-style: italic"># 也可以解构元祖，集合set等</span>
+<span style="color: #666666">*</span><span style="color: #008000">range</span>(<span style="color: #666666">4</span>), <span style="color: #666666">4</span>
+
+[<span style="color: #666666">*</span><span style="color: #008000">range</span>(<span style="color: #666666">4</span>), <span style="color: #666666">4</span>]
+
+{<span style="color: #666666">*</span><span style="color: #008000">range</span>(<span style="color: #666666">4</span>), <span style="color: #666666">4</span>, <span style="color: #666666">*</span>(<span style="color: #666666">5</span>, <span style="color: #666666">6</span>, <span style="color: #666666">7</span>)}
+
+{<span style="color: #BA2121">&#39;x&#39;</span>: <span style="color: #666666">1</span>, <span style="color: #666666">**</span>{<span style="color: #BA2121">&#39;y&#39;</span>: <span style="color: #666666">2</span>}}
+</code></pre></div>
+<h3 id="字符串格式化">字符串格式化<a class="headerlink" href="#字符串格式化" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 早期 - python 2</span>
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;name:</span><span style="color: #A45A77; font-weight: bold">%s</span><span style="color: #BA2121">, age:</span><span style="color: #A45A77; font-weight: bold">%s</span><span style="color: #BA2121">, sex: </span><span style="color: #A45A77; font-weight: bold">%s</span><span style="color: #BA2121">,&quot;</span> <span style="color: #666666">%</span>(<span style="color: #BA2121">&#39;张三&#39;</span>, <span style="color: #666666">18</span>, <span style="color: #BA2121">&#39;男&#39;</span>))
+
+<span style="color: #3D7B7B; font-style: italic"># 后来 - python 2</span>
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;name:</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">, age:</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">, sex:</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">&quot;</span><span style="color: #666666">.</span>format(<span style="color: #BA2121">&#39;张三&#39;</span>, <span style="color: #666666">18</span>, <span style="color: #BA2121">&#39;男&#39;</span>))
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;name:</span><span style="color: #A45A77; font-weight: bold">{name}</span><span style="color: #BA2121">, age:</span><span style="color: #A45A77; font-weight: bold">{age}</span><span style="color: #BA2121">, sex:</span><span style="color: #A45A77; font-weight: bold">{sex}</span><span style="color: #BA2121">&quot;</span><span style="color: #666666">.</span>format(name<span style="color: #666666">=</span><span style="color: #BA2121">&#39;张三&#39;</span>, age<span style="color: #666666">=18</span>, sex<span style="color: #666666">=</span><span style="color: #BA2121">&#39;男&#39;</span>))
+
+<span style="color: #3D7B7B; font-style: italic"># 现在 - python3</span>
+name, age, sex <span style="color: #666666">=</span> (<span style="color: #BA2121">&#39;张三&#39;</span>, <span style="color: #666666">18</span>, <span style="color: #BA2121">&#39;男&#39;</span>) <span style="color: #3D7B7B; font-style: italic"># 自动解包</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;name:</span><span style="color: #A45A77; font-weight: bold">{</span>name<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, age:</span><span style="color: #A45A77; font-weight: bold">{</span>age<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, sex:</span><span style="color: #A45A77; font-weight: bold">{</span>sex<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+</code></pre></div>
+<h3 id="f字符串支持用">f字符串支持用=<a class="headerlink" href="#f字符串支持用" title="Permanent link">&para;</a></h3>
+<p>自动记录表达式和调试文档</p>
+<p>增加 = 说明符用于 <a href="https://docs.python.org/zh-cn/3.8/glossary.html#term-f-string">f-string</a>。 形式为 <code>f'{expr=}'</code> 的 f-字符串将扩展表示为表达式文本，加一个等于号，再加表达式的求值结果。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 基本用法</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">datetime</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> user <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;eric_idle&#39;</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> member_since <span style="color: #666666">=</span> datetime<span style="color: #666666">.</span>date(<span style="color: #666666">1975</span>, <span style="color: #666666">7</span>, <span style="color: #666666">31</span>)
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #BA2121">f&#39;</span><span style="color: #A45A77; font-weight: bold">{</span>user<span style="color: #A45A77; font-weight: bold">=}</span><span style="color: #BA2121"> </span><span style="color: #A45A77; font-weight: bold">{</span>member_since<span style="color: #A45A77; font-weight: bold">=}</span><span style="color: #BA2121">&#39;</span>
+<span style="color: #BA2121">&quot;user=&#39;eric_idle&#39; member_since=datetime.date(1975, 7, 31)&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># 通常的 f-字符串格式说明符 允许更细致地控制所要显示的表达式结果:</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> delta <span style="color: #666666">=</span> datetime<span style="color: #666666">.</span>date<span style="color: #666666">.</span>today() <span style="color: #666666">-</span> member_since
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #BA2121">f&#39;</span><span style="color: #A45A77; font-weight: bold">{</span>user<span style="color: #A45A77; font-weight: bold">=!s}</span><span style="color: #BA2121">  </span><span style="color: #A45A77; font-weight: bold">{</span>delta<span style="color: #666666">.</span>days<span style="color: #A45A77; font-weight: bold">=:</span><span style="color: #BA2121">,d</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span>
+<span style="color: #BA2121">&#39;user=eric_idle  delta.days=17,436&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># = 说明符将输出整个表达式，以便详细演示计算过程:</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> cos, radians
+<span style="color: #666666">&gt;&gt;&gt;</span> theta <span style="color: #666666">=</span> <span style="color: #666666">30</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">print</span>(<span style="color: #BA2121">f&#39;</span><span style="color: #A45A77; font-weight: bold">{</span>theta<span style="color: #A45A77; font-weight: bold">=}</span><span style="color: #BA2121">  </span><span style="color: #A45A77; font-weight: bold">{</span>cos(radians(theta))<span style="color: #A45A77; font-weight: bold">=:</span><span style="color: #BA2121">.3f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span>)
+theta<span style="color: #666666">=30</span>  cos(radians(theta))<span style="color: #666666">=0.866</span>
+</code></pre></div>
+<h3 id="字典新增合并运算">字典新增合并运算<a class="headerlink" href="#字典新增合并运算" title="Permanent link">&para;</a></h3>
+<p>python 3.9新增特性</p>
+<p>合并 (<code>|</code>) 与更新 (<code>|=</code>) 运算符已被加入内置的 <code>dict</code> 类。 它们为现有的 <code>dict.update</code> 和 <code>{**d1, **d2}</code> 字典合并方法提供了补充。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> x <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;张三&quot;</span>, <span style="color: #BA2121">&quot;sex&quot;</span>: <span style="color: #BA2121">&quot;男&quot;</span>}
+<span style="color: #666666">&gt;&gt;&gt;</span> y <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;张小三&quot;</span>, <span style="color: #BA2121">&quot;sex&quot;</span>: <span style="color: #BA2121">&quot;男&quot;</span>}
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">print</span>(x <span style="color: #666666">|</span> y)  <span style="color: #3D7B7B; font-style: italic"># 取并集并覆盖</span>
+{<span style="color: #BA2121">&#39;name&#39;</span>: <span style="color: #BA2121">&#39;张小三&#39;</span>, <span style="color: #BA2121">&#39;sex&#39;</span>: <span style="color: #BA2121">&#39;男&#39;</span>}
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">print</span>(y <span style="color: #666666">|</span> x)  <span style="color: #3D7B7B; font-style: italic"># 取并集并覆盖</span>
+{<span style="color: #BA2121">&#39;name&#39;</span>: <span style="color: #BA2121">&#39;张三&#39;</span>, <span style="color: #BA2121">&#39;sex&#39;</span>: <span style="color: #BA2121">&#39;男&#39;</span>}
+</code></pre></div>
+<h3 id="数字加下划线">数字加下划线<a class="headerlink" href="#数字加下划线" title="Permanent link">&para;</a></h3>
+<p>数字中可以使用下划线增强可读性</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000">print</span>(<span style="color: #666666">1_000_000_000_000_00</span>)
+<span style="color: #008000">print</span>(<span style="color: #666666">0x_FF_FF_FF_FF</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># 字符串格式化也支持下划线_选项</span>
+</code></pre></div>
+<h3 id="类型标注">类型标注<a class="headerlink" href="#类型标注" title="Permanent link">&para;</a></h3>
+<p>参考官网: <a href="https://docs.python.org/zh-cn/3/library/typing.html">https://docs.python.org/zh-cn/3/library/typing.html</a></p>
+<h4 id="变量标注">变量标注<a class="headerlink" href="#变量标注" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 需要一部分IDE支持</span>
+primes: <span style="color: #008000">list</span>[<span style="color: #008000">int</span>] <span style="color: #666666">=</span> []
+
+captain: <span style="color: #008000">str</span>  <span style="color: #3D7B7B; font-style: italic"># Note: no initial value!</span>
+
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Starship</span>:
+    stats: <span style="color: #008000">dict</span>[<span style="color: #008000">str</span>, <span style="color: #008000">int</span>] <span style="color: #666666">=</span> {}
+
+primes<span style="color: #666666">.</span>append(<span style="color: #BA2121">&#39;sda&#39;</span>)  <span style="color: #3D7B7B; font-style: italic"># 这里会类型检查不通过</span>
+<span style="color: #008000">print</span>(primes)
+</code></pre></div>
+<h4 id="类型别名">类型别名<a class="headerlink" href="#类型别名" title="Permanent link">&para;</a></h4>
+<p>把类型赋给别名，就可以定义类型别名。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Vector 和 list[float] 相同，可互换</span>
+Vector <span style="color: #666666">=</span> <span style="color: #008000">list</span>[<span style="color: #008000">float</span>]
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">scale</span>(scalar: <span style="color: #008000">float</span>, vector: Vector) <span style="color: #666666">-&gt;</span> Vector:
+    <span style="color: #008000; font-weight: bold">return</span> [scalar <span style="color: #666666">*</span> num <span style="color: #008000; font-weight: bold">for</span> num <span style="color: #AA22FF; font-weight: bold">in</span> vector]
+
+<span style="color: #3D7B7B; font-style: italic"># 通过类型检查; 一个浮点数的列表组合 类型为 Vector.</span>
+new_vector <span style="color: #666666">=</span> scale(<span style="color: #666666">2.0</span>, [<span style="color: #666666">1.0</span>, <span style="color: #666666">-4.2</span>, <span style="color: #666666">5.4</span>])
+</code></pre></div>
+<p><strong>类型别名</strong>主要适用于简化复杂的类型签名</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">collections.abc</span> <span style="color: #008000; font-weight: bold">import</span> Sequence  <span style="color: #3D7B7B; font-style: italic"># 序列泛型</span>
+
+ConnectionOptions <span style="color: #666666">=</span> <span style="color: #008000">dict</span>[<span style="color: #008000">str</span>, <span style="color: #008000">str</span>]
+Address <span style="color: #666666">=</span> <span style="color: #008000">tuple</span>[<span style="color: #008000">str</span>, <span style="color: #008000">int</span>]
+Server <span style="color: #666666">=</span> <span style="color: #008000">tuple</span>[Address, ConnectionOptions]
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">broadcast_message</span>(message: <span style="color: #008000">str</span>, servers: Sequence[Server]) <span style="color: #666666">-&gt;</span> <span style="color: #008000; font-weight: bold">None</span>:
+    <span style="color: #666666">...</span>
+
+<span style="color: #3D7B7B; font-style: italic"># 静态类型检查器会将前一个类型签名视为与当前类型签名完全相同。</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">broadcast_message</span>(
+        message: <span style="color: #008000">str</span>,
+        servers: Sequence[<span style="color: #008000">tuple</span>[<span style="color: #008000">tuple</span>[<span style="color: #008000">str</span>, <span style="color: #008000">int</span>], <span style="color: #008000">dict</span>[<span style="color: #008000">str</span>, <span style="color: #008000">str</span>]]]) <span style="color: #666666">-&gt;</span> <span style="color: #008000; font-weight: bold">None</span>:
+    <span style="color: #666666">...</span>
+</code></pre></div>
+<h2 id="标准库">标准库<a class="headerlink" href="#标准库" title="Permanent link">&para;</a></h2>
+<h3 id="csv">csv<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h3>
+<p>参考标准库: <a href="https://docs.python.org/zh-cn/3/library/csv.html">https://docs.python.org/zh-cn/3/library/csv.html</a></p>
+<p><code>CSV</code> (Comma Separated Values) 格式是电子表格和数据库中最常见的输入、输出文件格式。</p>
+<p><code>csv</code> 模块实现了 <code>CSV</code> 格式表单数据的读写</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 基本读写</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">csv</span>
+
+<span style="color: #3D7B7B; font-style: italic"># csv.reader 读取</span>
+<span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;eggs.csv&#39;</span>, newline<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&#39;</span>) <span style="color: #008000; font-weight: bold">as</span> csvfile:
+    spamreader <span style="color: #666666">=</span> csv<span style="color: #666666">.</span>reader(csvfile, delimiter<span style="color: #666666">=</span><span style="color: #BA2121">&#39; &#39;</span>, quotechar<span style="color: #666666">=</span><span style="color: #BA2121">&#39;|&#39;</span>)
+    <span style="color: #008000; font-weight: bold">for</span> row <span style="color: #AA22FF; font-weight: bold">in</span> spamreader:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&#39;, &#39;</span><span style="color: #666666">.</span>join(row))
+
+<span style="color: #3D7B7B; font-style: italic"># csv.writer 写入</span>
+<span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;eggs.csv&#39;</span>, <span style="color: #BA2121">&#39;w&#39;</span>, newline<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&#39;</span>) <span style="color: #008000; font-weight: bold">as</span> csvfile:
+    spamwriter <span style="color: #666666">=</span> csv<span style="color: #666666">.</span>writer(csvfile, delimiter<span style="color: #666666">=</span><span style="color: #BA2121">&#39; &#39;</span>,
+                            quotechar<span style="color: #666666">=</span><span style="color: #BA2121">&#39;|&#39;</span>, quoting<span style="color: #666666">=</span>csv<span style="color: #666666">.</span>QUOTE_MINIMAL)
+    spamwriter<span style="color: #666666">.</span>writerow([<span style="color: #BA2121">&#39;Spam&#39;</span>] <span style="color: #666666">*</span> <span style="color: #666666">5</span> <span style="color: #666666">+</span> [<span style="color: #BA2121">&#39;Baked Beans&#39;</span>])
+    spamwriter<span style="color: #666666">.</span>writerow([<span style="color: #BA2121">&#39;Spam&#39;</span>, <span style="color: #BA2121">&#39;Lovely Spam&#39;</span>, <span style="color: #BA2121">&#39;Wonderful Spam&#39;</span>])
+
+<span style="color: #3D7B7B; font-style: italic"># 字典读写</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">csv</span>
+
+<span style="color: #3D7B7B; font-style: italic"># csv.DictReader 读取字典格式</span>
+<span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;names.csv&#39;</span>, newline<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&#39;</span>) <span style="color: #008000; font-weight: bold">as</span> csvfile:
+    reader <span style="color: #666666">=</span> csv<span style="color: #666666">.</span>DictReader(csvfile)
+    <span style="color: #008000; font-weight: bold">for</span> row <span style="color: #AA22FF; font-weight: bold">in</span> reader:
+        <span style="color: #008000">print</span>(row[<span style="color: #BA2121">&#39;first_name&#39;</span>], row[<span style="color: #BA2121">&#39;last_name&#39;</span>])
+
+<span style="color: #3D7B7B; font-style: italic"># csv.DictWriter 写入字典格式</span>
+<span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&#39;names.csv&#39;</span>, <span style="color: #BA2121">&#39;w&#39;</span>, newline<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&#39;</span>) <span style="color: #008000; font-weight: bold">as</span> csvfile:
+    fieldnames <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;first_name&#39;</span>, <span style="color: #BA2121">&#39;last_name&#39;</span>]
+    writer <span style="color: #666666">=</span> csv<span style="color: #666666">.</span>DictWriter(csvfile, fieldnames<span style="color: #666666">=</span>fieldnames)
+
+    writer<span style="color: #666666">.</span>writeheader()
+    writer<span style="color: #666666">.</span>writerow({<span style="color: #BA2121">&#39;first_name&#39;</span>: <span style="color: #BA2121">&#39;Baked&#39;</span>, <span style="color: #BA2121">&#39;last_name&#39;</span>: <span style="color: #BA2121">&#39;Beans&#39;</span>})
+    writer<span style="color: #666666">.</span>writerow({<span style="color: #BA2121">&#39;first_name&#39;</span>: <span style="color: #BA2121">&#39;Lovely&#39;</span>, <span style="color: #BA2121">&#39;last_name&#39;</span>: <span style="color: #BA2121">&#39;Spam&#39;</span>})
+    writer<span style="color: #666666">.</span>writerow({<span style="color: #BA2121">&#39;first_name&#39;</span>: <span style="color: #BA2121">&#39;Wonderful&#39;</span>, <span style="color: #BA2121">&#39;last_name&#39;</span>: <span style="color: #BA2121">&#39;Spam&#39;</span>})
+</code></pre></div>
+<h3 id="io">io<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
+<p>参考官网: <a href="https://docs.python.org/zh-cn/3/library/io.html">https://docs.python.org/zh-cn/3/library/io.html</a></p>
+<p>io 模块提供了 Python 用于处理各种 I/O 类型的主要工具。三种主要的 I/O类型分别为: 文本 I/O, 二进制 I/O 和 原始 I/O。</p>
+<h4 id="文本io">文本IO<a class="headerlink" href="#文本io" title="Permanent link">&para;</a></h4>
+<p>内存中文本流作为 <a href="https://docs.python.org/zh-cn/3/library/io.html#io.StringIO">StringIO</a> 对象使用：</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 文本I/O预期并生成 str 对象。</span>
+f <span style="color: #666666">=</span> io<span style="color: #666666">.</span>StringIO(<span style="color: #BA2121">&quot;some initial text data&quot;</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># 主要用于生成小的文本文件（例如：csv），便于处理，而非创建一个临时文件（磁盘IO）</span>
+</code></pre></div>
+<h4 id="二进制-io">二进制 I/O<a class="headerlink" href="#二进制-io" title="Permanent link">&para;</a></h4>
+<p>二进制I/O（也称为<strong>缓冲I/O</strong>）预期 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-bytes-like-object">bytes-like objects</a> 并生成 <a href="https://docs.python.org/zh-cn/3/library/stdtypes.html#bytes">bytes</a> 对象。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 存储二进制数据</span>
+f <span style="color: #666666">=</span> io<span style="color: #666666">.</span>BytesIO(<span style="color: #BA2121">b&quot;some initial binary data: </span><span style="color: #AA5D1F; font-weight: bold">\x00\x01</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># 多常用于图片、验证码等。</span>
+</code></pre></div>
+<h3 id="collections-常用容器">collections 常用容器<a class="headerlink" href="#collections-常用容器" title="Permanent link">&para;</a></h3>
+<h4 id="chainmap">ChainMap<a class="headerlink" href="#chainmap" title="Permanent link">&para;</a></h4>
+<p>一个 <a href="https://docs.python.org/zh-cn/3/library/collections.html#collections.ChainMap">ChainMap</a> 将多个字典或者其他映射组合在一起，创建一个单独的可更新的视图。 如果没有 maps 被指定，就提供一个默认的空字典，这样一个新链至少有一个映射。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> baseline <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;music&#39;</span>: <span style="color: #BA2121">&#39;bach&#39;</span>, <span style="color: #BA2121">&#39;art&#39;</span>: <span style="color: #BA2121">&#39;rembrandt&#39;</span>}
+<span style="color: #666666">&gt;&gt;&gt;</span> adjustments <span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;art&#39;</span>: <span style="color: #BA2121">&#39;van gogh&#39;</span>, <span style="color: #BA2121">&#39;opera&#39;</span>: <span style="color: #BA2121">&#39;carmen&#39;</span>}
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(ChainMap(adjustments, baseline))
+[<span style="color: #BA2121">&#39;music&#39;</span>, <span style="color: #BA2121">&#39;art&#39;</span>, <span style="color: #BA2121">&#39;opera&#39;</span>]
+
+<span style="color: #3D7B7B; font-style: italic"># python3 新语法 针对字典 的 | 运算符也可以</span>
+</code></pre></div>
+<h4 id="counter">Counter<a class="headerlink" href="#counter" title="Permanent link">&para;</a></h4>
+<p>一个计数器工具提供快速和方便的计数</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">collections</span> <span style="color: #008000; font-weight: bold">import</span> Counter
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">for</span> word <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&#39;red&#39;</span>, <span style="color: #BA2121">&#39;blue&#39;</span>, <span style="color: #BA2121">&#39;red&#39;</span>, <span style="color: #BA2121">&#39;green&#39;</span>, <span style="color: #BA2121">&#39;blue&#39;</span>, <span style="color: #BA2121">&#39;blue&#39;</span>]:
+<span style="color: #666666">...</span>     cnt[word] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+<span style="color: #666666">...</span> 
+<span style="color: #666666">&gt;&gt;&gt;</span> cnt
+Counter({<span style="color: #BA2121">&#39;blue&#39;</span>: <span style="color: #666666">3</span>, <span style="color: #BA2121">&#39;red&#39;</span>: <span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;green&#39;</span>: <span style="color: #666666">1</span>})
+</code></pre></div>
+<h4 id="defaultdict">defaultdict<a class="headerlink" href="#defaultdict" title="Permanent link">&para;</a></h4>
+<p>返回一个新的类似字典的对象。 <code>defaultdict</code> 是内置 <code>dict</code> 类的子类。 它重载了一个方法并添加了一个可写的实例变量。 其余的功能与 <code>dict</code> 类相同因而不在此文档中写明。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">collections</span> <span style="color: #008000; font-weight: bold">import</span> defaultdict
+<span style="color: #666666">&gt;&gt;&gt;</span> s <span style="color: #666666">=</span> [(<span style="color: #BA2121">&#39;yellow&#39;</span>, <span style="color: #666666">1</span>), (<span style="color: #BA2121">&#39;blue&#39;</span>, <span style="color: #666666">2</span>), (<span style="color: #BA2121">&#39;yellow&#39;</span>, <span style="color: #666666">3</span>), (<span style="color: #BA2121">&#39;blue&#39;</span>, <span style="color: #666666">4</span>), (<span style="color: #BA2121">&#39;red&#39;</span>, <span style="color: #666666">1</span>)]
+<span style="color: #666666">&gt;&gt;&gt;</span> d <span style="color: #666666">=</span> defaultdict(<span style="color: #008000">list</span>)
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">for</span> k, v <span style="color: #AA22FF; font-weight: bold">in</span> s:
+<span style="color: #666666">...</span>     d[k]<span style="color: #666666">.</span>append(v)
+<span style="color: #666666">...</span> 
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">sorted</span>(d<span style="color: #666666">.</span>items())
+[(<span style="color: #BA2121">&#39;blue&#39;</span>, [<span style="color: #666666">2</span>, <span style="color: #666666">4</span>]), (<span style="color: #BA2121">&#39;red&#39;</span>, [<span style="color: #666666">1</span>]), (<span style="color: #BA2121">&#39;yellow&#39;</span>, [<span style="color: #666666">1</span>, <span style="color: #666666">3</span>])]
+</code></pre></div>
+<h4 id="namedtuple">namedtuple<a class="headerlink" href="#namedtuple" title="Permanent link">&para;</a></h4>
+<p>命名元组赋予每个位置一个含义，提供可读性和自文档性。它们可以用于任何普通元组，并添加了通过名字获取值的能力，通过索引值也是可以的。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">collections</span> <span style="color: #008000; font-weight: bold">import</span> namedtuple
+<span style="color: #666666">&gt;&gt;&gt;</span> Point <span style="color: #666666">=</span> namedtuple(<span style="color: #BA2121">&#39;Point&#39;</span>, [<span style="color: #BA2121">&#39;x&#39;</span>, <span style="color: #BA2121">&#39;y&#39;</span>])  <span style="color: #3D7B7B; font-style: italic"># 使用位置或关键字参数实例化</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> p <span style="color: #666666">=</span> Point(<span style="color: #666666">11</span>, y<span style="color: #666666">=22</span>)                      <span style="color: #3D7B7B; font-style: italic"># 像普通元组 (11, 22) 一样可索引</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> p[<span style="color: #666666">0</span>] <span style="color: #666666">+</span> p[<span style="color: #666666">1</span>]
+<span style="color: #666666">33</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> x, y <span style="color: #666666">=</span> p                                 <span style="color: #3D7B7B; font-style: italic"># 像普通元组一样解构</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> x, y
+(<span style="color: #666666">11</span>, <span style="color: #666666">22</span>)
+<span style="color: #666666">&gt;&gt;&gt;</span> p<span style="color: #666666">.</span>x <span style="color: #666666">+</span> p<span style="color: #666666">.</span>y                                <span style="color: #3D7B7B; font-style: italic"># 也可按名称访问字段</span>
+<span style="color: #666666">33</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> p
+Point(x<span style="color: #666666">=11</span>, y<span style="color: #666666">=22</span>)                            <span style="color: #3D7B7B; font-style: italic"># 以可读的name=value形式作为__repr__的输出</span>
+</code></pre></div>
+<h2 id="内置函数">内置函数<a class="headerlink" href="#内置函数" title="Permanent link">&para;</a></h2>
+<h3 id="map">map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
+<p>返回一个迭代器，它将函数应用于可迭代的每个项目，产生结果。 如果传递了额外的可迭代参数，则函数必须采用那么多参数，并并行应用于所有可迭代的项目。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 有时候需要批量需要将pk的集合转化为str，然后进行join操作</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list <span style="color: #666666">=</span> [<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>,<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;,&#39;</span><span style="color: #666666">.</span>join(<span style="color: #008000">map</span>(<span style="color: #008000; font-weight: bold">lambda</span> x: <span style="color: #008000">str</span>(x), pk_list))
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_dtr
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str
+<span style="color: #BA2121">&#39;1,2,3,4,5,6&#39;</span>
+</code></pre></div>
+<h3 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
+<p>从 <code>iterable</code> 的那些元素构造一个迭代器，其中 <code>function</code> 为真。 <code>iterable</code> 可以是序列、支持迭代的容器或迭代器。 如果 <code>function</code> 为 <code>None</code>，则假设为恒等函数，即 <code>iterable</code> 中所有为 <code>false</code> 的元素都将被移除。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 保留执行函数为真的值</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list <span style="color: #666666">=</span> [<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>,<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list <span style="color: #666666">=</span> <span style="color: #008000">filter</span>(<span style="color: #008000; font-weight: bold">lambda</span> x: x<span style="color: #666666">%2==0</span>, pk_list)  <span style="color: #3D7B7B; font-style: italic"># 保留能被2整除的PK</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;,&#39;</span><span style="color: #666666">.</span>join(<span style="color: #008000">map</span>(<span style="color: #008000; font-weight: bold">lambda</span> x: <span style="color: #008000">str</span>(x), pk_list))
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str
+<span style="color: #BA2121">&#39;2,4,6,8&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># 过滤值bool判断为false的值</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list <span style="color: #666666">=</span> [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>,<span style="color: #666666">3</span>,<span style="color: #666666">0</span>,<span style="color: #666666">2</span>, <span style="color: #666666">-1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">6</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list <span style="color: #666666">=</span> <span style="color: #008000">filter</span>(<span style="color: #008000; font-weight: bold">None</span>, pk_list) 
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;,&#39;</span><span style="color: #666666">.</span>join(<span style="color: #008000">map</span>(<span style="color: #008000; font-weight: bold">lambda</span> x: <span style="color: #008000">str</span>(x), pk_list))
+<span style="color: #666666">&gt;&gt;&gt;</span> pk_list_str
+<span style="color: #BA2121">&#39;1,3,2,-1,6&#39;</span>
+</code></pre></div>
+<h3 id="any">any<a class="headerlink" href="#any" title="Permanent link">&para;</a></h3>
+<p>如果 <code>iterable</code> 的任一元素为真值则返回 <code>True</code>。 如果可迭代对象为空，返回 <code>False</code>。 等价于:</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">any</span>(iterable):
+    <span style="color: #008000; font-weight: bold">for</span> element <span style="color: #AA22FF; font-weight: bold">in</span> iterable:
+        <span style="color: #008000; font-weight: bold">if</span> element:
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">True</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">False</span>
+</code></pre></div>
+<h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">&para;</a></h3>
+<p>如果 <code>iterable</code> 的所有元素均为真值（或可迭代对象为空）则返回 <code>True</code> 。 等价于：</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">all</span>(iterable):
+    <span style="color: #008000; font-weight: bold">for</span> element <span style="color: #AA22FF; font-weight: bold">in</span> iterable:
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> element:
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">False</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">True</span>
+</code></pre></div>
+<h3 id="zip">zip<a class="headerlink" href="#zip" title="Permanent link">&para;</a></h3>
+<p>在多个迭代器上并行迭代，从每个迭代器返回一个数据项组成元组</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># 有时候经常遇到sql执行之后返回这样的值</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> keys <span style="color: #666666">=</span> (<span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #BA2121">&#39;b&#39;</span>, <span style="color: #BA2121">&#39;c&#39;</span>)
+<span style="color: #666666">&gt;&gt;&gt;</span> values <span style="color: #666666">=</span> [[<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">3</span>], [<span style="color: #666666">4</span>,<span style="color: #666666">5</span>,<span style="color: #666666">6</span>], [<span style="color: #666666">7</span>,<span style="color: #666666">8</span>,<span style="color: #666666">9</span>]]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">map</span>(<span style="color: #008000">dict</span>, <span style="color: #008000">map</span>(<span style="color: #008000; font-weight: bold">lambda</span> items: <span style="color: #008000">zip</span>(keys, items), values)))
+[{<span style="color: #BA2121">&#39;a&#39;</span>: <span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;b&#39;</span>: <span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;c&#39;</span>: <span style="color: #666666">3</span>}, {<span style="color: #BA2121">&#39;a&#39;</span>: <span style="color: #666666">4</span>, <span style="color: #BA2121">&#39;b&#39;</span>: <span style="color: #666666">5</span>, <span style="color: #BA2121">&#39;c&#39;</span>: <span style="color: #666666">6</span>}, {<span style="color: #BA2121">&#39;a&#39;</span>: <span style="color: #666666">7</span>, <span style="color: #BA2121">&#39;b&#39;</span>: <span style="color: #666666">8</span>, <span style="color: #BA2121">&#39;c&#39;</span>: <span style="color: #666666">9</span>}]
+</code></pre></div>
+<h3 id="sorted">sorted<a class="headerlink" href="#sorted" title="Permanent link">&para;</a></h3>
+<p>定义: <code>sorted(iterable, /, *, key=None, reverse=False)</code></p>
+<p>根据 <code>iterable</code> 中的项返回一个新的已排序列表。</p>
+<p>具有两个可选参数，它们都必须指定为关键字参数。</p>
+<p><code>key</code> 指定带有单个参数的函数，用于从 <code>iterable</code> 的每个元素中提取用于比较的键 (例如 <code>key=str.lower</code>)。 默认值为 <code>None</code> (直接比较元素)。</p>
+<p><code>reverse</code> 为一个布尔值。 如果设为 <code>True</code>，则每个列表元素将按反向顺序比较进行排序。</p>
+<h3 id="sum">sum<a class="headerlink" href="#sum" title="Permanent link">&para;</a></h3>
+<p>定义: <code>sum(iterable, /, start=0)</code></p>
+<p>从 <code>start</code> 开始自左向右对 <code>iterable</code> 的项求和并返回总计值。 <code>iterable</code> 的项通常为数字，而 <code>start</code> 值则不允许为字符串。</p>
+<p>对某些用例来说，存在 <code>sum()</code> 的更好替代。 拼接字符串序列的更好更快方式是调用 <code>''.join(sequence)</code>。 要以扩展精度对浮点值求和，参考 <code>math.fsum()</code>。 要拼接一系列可迭代对象，请参考使用 <code>itertools.chain()</code>。</p>
+<h3 id="range">range<a class="headerlink" href="#range" title="Permanent link">&para;</a></h3>
+<p>生成指定区间的整数数列</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">range</span>(<span style="color: #666666">10</span>))
+[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>, <span style="color: #666666">6</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>, <span style="color: #666666">9</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">range</span>(<span style="color: #666666">1</span>, <span style="color: #666666">11</span>))
+[<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>, <span style="color: #666666">6</span>, <span style="color: #666666">7</span>, <span style="color: #666666">8</span>, <span style="color: #666666">9</span>, <span style="color: #666666">10</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">range</span>(<span style="color: #666666">0</span>, <span style="color: #666666">30</span>, <span style="color: #666666">5</span>))
+[<span style="color: #666666">0</span>, <span style="color: #666666">5</span>, <span style="color: #666666">10</span>, <span style="color: #666666">15</span>, <span style="color: #666666">20</span>, <span style="color: #666666">25</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">range</span>(<span style="color: #666666">0</span>, <span style="color: #666666">10</span>, <span style="color: #666666">3</span>))
+[<span style="color: #666666">0</span>, <span style="color: #666666">3</span>, <span style="color: #666666">6</span>, <span style="color: #666666">9</span>]
+</code></pre></div>
+<h3 id="getattr">getattr<a class="headerlink" href="#getattr" title="Permanent link">&para;</a></h3>
+<p>返回对象命名属性的值。 名称必须是字符串。 </p>
+<h3 id="setattr">setattr<a class="headerlink" href="#setattr" title="Permanent link">&para;</a></h3>
+<p>赋值指定属性以及值给对象。</p>
+<p>如 <code>setattr(x, 'foobar', 123)</code> 等价于 <code>x.foobar = 123</code>。</p>
+<h3 id="hasattr">hasattr<a class="headerlink" href="#hasattr" title="Permanent link">&para;</a></h3>
+<p>判断一个对象是否拥有某个属性， 如果拥有返回<code>True</code>、否则返回<code>False</code></p>
+<h3 id="enumerate">enumerate<a class="headerlink" href="#enumerate" title="Permanent link">&para;</a></h3>
+<p>返回一个枚举对象。<code>iterable</code> 必须是一个序列，或 <code>iterator</code>，或其他支持迭代的对象。 <code>enumerate()</code> 返回的迭代器的 <code>__next__()</code> 方法返回一个元组，里面包含一个计数值（从 <code>start</code> 开始，默认为 <code>0</code>）和通过迭代 <code>iterable</code> 获得的值。</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #666666">&gt;&gt;&gt;</span> seasons <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;Spring&#39;</span>, <span style="color: #BA2121">&#39;Summer&#39;</span>, <span style="color: #BA2121">&#39;Fall&#39;</span>, <span style="color: #BA2121">&#39;Winter&#39;</span>]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">enumerate</span>(seasons))
+[(<span style="color: #666666">0</span>, <span style="color: #BA2121">&#39;Spring&#39;</span>), (<span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;Summer&#39;</span>), (<span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;Fall&#39;</span>), (<span style="color: #666666">3</span>, <span style="color: #BA2121">&#39;Winter&#39;</span>)]
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">list</span>(<span style="color: #008000">enumerate</span>(seasons, start<span style="color: #666666">=1</span>))
+[(<span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;Spring&#39;</span>), (<span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;Summer&#39;</span>), (<span style="color: #666666">3</span>, <span style="color: #BA2121">&#39;Fall&#39;</span>), (<span style="color: #666666">4</span>, <span style="color: #BA2121">&#39;Winter&#39;</span>)]
+</code></pre></div>
+<p>等价于:</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">enumerate</span>(iterable, start<span style="color: #666666">=0</span>):
+    n <span style="color: #666666">=</span> start
+    <span style="color: #008000; font-weight: bold">for</span> elem <span style="color: #AA22FF; font-weight: bold">in</span> iterable:
+        <span style="color: #008000; font-weight: bold">yield</span> n, elem
+        n <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+</code></pre></div>
+<h2 id="项目实战">项目实战<a class="headerlink" href="#项目实战" title="Permanent link">&para;</a></h2>
+<h3 id="代码优化1">代码优化1<a class="headerlink" href="#代码优化1" title="Permanent link">&para;</a></h3>
+<p>优化前</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">get_access_token</span>(<span style="color: #008000">cls</span>, data):
+    param <span style="color: #666666">=</span> data<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;param&#39;</span>)
+    code <span style="color: #666666">=</span> param<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;code&#39;</span>)
+    home_url <span style="color: #666666">=</span> param<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;home_url&#39;</span>)
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> code:
+        <span style="color: #008000; font-weight: bold">raise</span> <span style="color: #CB3F38; font-weight: bold">Exception</span>(<span style="color: #BA2121">&#39;缺少参数code&#39;</span>)
+    url <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;https://api.weixin.qq.com/sns/oauth2/access_token?grant_type=authorization_code&amp;appid=</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">&amp;secret=</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">&amp;&#39;</span> \
+            <span style="color: #BA2121">&#39;code=</span><span style="color: #A45A77; font-weight: bold">{}</span><span style="color: #BA2121">&#39;</span><span style="color: #666666">.</span>format(
+            public_account_config<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;app_id&#39;</span>), public_account_config<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;secret&#39;</span>), code)
+    <span style="color: #3D7B7B; font-style: italic"># 获取到微信的access_token、openid</span>
+    res <span style="color: #666666">=</span> requests<span style="color: #666666">.</span>get(url, params<span style="color: #666666">=</span>data)<span style="color: #666666">.</span>json()
+
+    <span style="color: #3D7B7B; font-style: italic"># 存在跳转链接</span>
+    <span style="color: #008000; font-weight: bold">if</span> home_url:
+        <span style="color: #008000; font-weight: bold">return</span> redirect_link(home_url, res)
+    <span style="color: #008000; font-weight: bold">return</span> {
+        <span style="color: #BA2121">&#39;code&#39;</span>: UserStatusCode<span style="color: #666666">.</span>OK,
+        <span style="color: #BA2121">&#39;message&#39;</span>: <span style="color: #BA2121">&#39;ok&#39;</span>,
+        <span style="color: #BA2121">&#39;data&#39;</span>: res
+    }
+</code></pre></div>
+<p>优化后:</p>
+<div class="language-python highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">get_access_token</span>(<span style="color: #008000">cls</span>, data: <span style="color: #008000">dict</span>):
+    param <span style="color: #666666">=</span> data<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;param&#39;</span>)
+    code <span style="color: #666666">=</span> param<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;code&#39;</span>)
+    home_url <span style="color: #666666">=</span> param<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;home_url&#39;</span>)
+    app_id <span style="color: #666666">=</span> public_account_config<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;app_id&#39;</span>)
+    secret <span style="color: #666666">=</span> public_account_config<span style="color: #666666">.</span>get(<span style="color: #BA2121">&#39;secret&#39;</span>)
+
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> code:
+        <span style="color: #008000; font-weight: bold">raise</span> <span style="color: #CB3F38; font-weight: bold">Exception</span>(<span style="color: #BA2121">&#39;缺少参数code&#39;</span>)
+
+    parameters <span style="color: #666666">=</span> (
+        (<span style="color: #BA2121">&#39;grant_type&#39;</span>, <span style="color: #BA2121">&#39;authorization_code&#39;</span>),
+        (<span style="color: #BA2121">&#39;appid&#39;</span>, app_id),
+        (<span style="color: #BA2121">&#39;secret&#39;</span>, secret),
+        (<span style="color: #BA2121">&#39;code&#39;</span>, code),
+    )
+
+    param_url <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;&amp;&#39;</span><span style="color: #666666">.</span>join([<span style="color: #BA2121">f&#39;</span><span style="color: #A45A77; font-weight: bold">{</span>key<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">=</span><span style="color: #A45A77; font-weight: bold">{</span>val<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span> <span style="color: #008000; font-weight: bold">for</span> (key, val) <span style="color: #AA22FF; font-weight: bold">in</span> parameters])
+
+    url <span style="color: #666666">=</span> <span style="color: #BA2121">f&#39;https://api.weixin.qq.com/sns/oauth2/access_token?</span><span style="color: #A45A77; font-weight: bold">{</span>param_url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span>
+    <span style="color: #3D7B7B; font-style: italic"># 获取到微信的access_token、openid</span>
+    res <span style="color: #666666">=</span> requests<span style="color: #666666">.</span>get(url)<span style="color: #666666">.</span>json()
+
+    <span style="color: #3D7B7B; font-style: italic"># 存在跳转链接</span>
+    <span style="color: #008000; font-weight: bold">if</span> home_url:
+        <span style="color: #008000; font-weight: bold">return</span> redirect_link(home_url, res)
+
+    <span style="color: #008000; font-weight: bold">return</span> {
+        <span style="color: #BA2121">&#39;code&#39;</span>: UserStatusCode<span style="color: #666666">.</span>OK,
+        <span style="color: #BA2121">&#39;message&#39;</span>: <span style="color: #BA2121">&#39;ok&#39;</span>,
+        <span style="color: #BA2121">&#39;data&#39;</span>: res
+    }
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月4日</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月4日</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.prune", "navigation.instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

@@ -1,0 +1,3023 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="hellowac-类型检查">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../pep8/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>命名和缩写 - python编码风格指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#编程命名和英文字母缩写" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+你当前浏览的版本已不是最新版本，
+<a href="../..">
+    <strong>点击这里</strong>
+</a>查看最新版本的文档
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="python编码风格指南" class="md-header__button md-logo" aria-label="python编码风格指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            python编码风格指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              命名和缩写
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hellowac/python-program-style-zh-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hellowac/python-program-style-zh-cn
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  python编码风格指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  命名和缩写
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pep8/" class="md-tabs__link">
+        
+  
+    
+  
+  编码风格
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pep8-examples/" class="md-tabs__link">
+        
+  
+    
+  
+  编码风格样例
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pre-commit/" class="md-tabs__link">
+        
+  
+    
+  
+  风格维护工具
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="python编码风格指南" class="md-nav__button md-logo" aria-label="python编码风格指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    python编码风格指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hellowac/python-program-style-zh-cn" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hellowac/python-program-style-zh-cn
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python编码风格指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    命名和缩写
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    命名和缩写
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#命名规则" class="md-nav__link">
+    命名规则
+  </a>
+  
+    <nav class="md-nav" aria-label="命名规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#驼峰命名法" class="md-nav__link">
+    驼峰命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#匈牙利命名法" class="md-nav__link">
+    匈牙利命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#帕斯卡命名法" class="md-nav__link">
+    帕斯卡命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#下划线命名法" class="md-nav__link">
+    下划线命名法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#命名的基本原则" class="md-nav__link">
+    命名的基本原则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#编程单词缩写规则" class="md-nav__link">
+    编程单词缩写规则
+  </a>
+  
+    <nav class="md-nav" aria-label="编程单词缩写规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    F
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    G
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    H
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    K
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    L
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    M
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    N
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    P
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    T
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    U
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    V
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y" class="md-nav__link">
+    Y
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编码风格
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep8-examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编码风格样例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-commit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风格维护工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#命名规则" class="md-nav__link">
+    命名规则
+  </a>
+  
+    <nav class="md-nav" aria-label="命名规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#驼峰命名法" class="md-nav__link">
+    驼峰命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#匈牙利命名法" class="md-nav__link">
+    匈牙利命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#帕斯卡命名法" class="md-nav__link">
+    帕斯卡命名法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#下划线命名法" class="md-nav__link">
+    下划线命名法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#命名的基本原则" class="md-nav__link">
+    命名的基本原则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#编程单词缩写规则" class="md-nav__link">
+    编程单词缩写规则
+  </a>
+  
+    <nav class="md-nav" aria-label="编程单词缩写规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    F
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    G
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    H
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    K
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    L
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    M
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    N
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    P
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    T
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    U
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    V
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y" class="md-nav__link">
+    Y
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="编程命名和英文字母缩写">编程命名和英文字母缩写<a class="headerlink" href="#编程命名和英文字母缩写" title="Permanent link">&para;</a></h1>
+<h2 id="命名规则">命名规则<a class="headerlink" href="#命名规则" title="Permanent link">&para;</a></h2>
+<p>目前，业界共有四种命名法则：<strong>驼峰命名法</strong>、<strong>匈牙利命名法</strong>、<strong>帕斯卡命名法</strong>和<strong>下划线命名法</strong>，其中前三种是较为流行的命名，而第四种在python中则有特殊的意义，详细参考<a href="../pep8/#_20">pep8-命名约定</a></p>
+<h3 id="驼峰命名法">驼峰命名法<a class="headerlink" href="#驼峰命名法" title="Permanent link">&para;</a></h3>
+<p>驼峰式命名法，又叫<strong>小驼峰式命名法</strong>（所以自然就存在大驼峰命名法啦)。</p>
+<p>该命名规范，要求第一个单词首字母小写，后面其他单词首字母大写，简单粗暴易学易用。</p>
+<div class="language-c highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #B00040">int</span><span style="color: #bbbbbb"> </span>myAge;
+<span style="color: #B00040">char</span><span style="color: #bbbbbb"> </span>myName[<span style="color: #666666">10</span>];
+<span style="color: #B00040">float</span><span style="color: #bbbbbb"> </span>manHeight;
+</code></pre></div>
+<h3 id="匈牙利命名法">匈牙利命名法<a class="headerlink" href="#匈牙利命名法" title="Permanent link">&para;</a></h3>
+<p>匈牙利命名法是早期的规范，由微软的一个匈牙利人发明的，是 IDE 还十分智障的年代的产物。那个年代，当代码量很多的时候，想要确定一个变量的类型是很麻烦的，不像现在 IDE 都会给提示，所以才产生了这样一个命名规范，估计现在已经没啥人用了吧……一个十分系统却又琐碎的命名规范。</p>
+<p>该命名规范，要求前缀字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，单词第一个字母大写。</p>
+<div class="language-c highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #B00040">int</span><span style="color: #bbbbbb"> </span>iMyAge;<span style="color: #bbbbbb">        </span><span style="border: 1px solid #FF0000">#</span><span style="color: #bbbbbb">  </span><span style="color: #BA2121">&quot;i&quot;</span><span style="color: #666666">:</span><span style="color: #bbbbbb"> </span><span style="color: #B00040">int</span>
+<span style="color: #B00040">char</span><span style="color: #bbbbbb"> </span>cMyName[<span style="color: #666666">10</span>];<span style="color: #bbbbbb">  </span><span style="border: 1px solid #FF0000">#</span><span style="color: #bbbbbb">  </span><span style="color: #BA2121">&quot;c&quot;</span><span style="color: #666666">:</span><span style="color: #bbbbbb"> </span><span style="color: #B00040">char</span>
+<span style="color: #B00040">float</span><span style="color: #bbbbbb"> </span>fManHeight;<span style="color: #bbbbbb">  </span><span style="border: 1px solid #FF0000">#</span><span style="color: #bbbbbb">  </span><span style="color: #BA2121">&quot;f&quot;</span><span style="color: #666666">:</span><span style="color: #bbbbbb"> </span><span style="color: #B00040">float</span>
+</code></pre></div>
+<p>其他前缀类型还有：</p>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>a      数组（Array）
+b      布尔值（Boolean）
+by     字节（Byte）
+c      有符号字符（Char）
+cb     无符号字符（Char Byte，并没有神马人用的）
+cr     颜色参考值（Color Ref）
+cx,cy  坐标差（长度 Short Int）
+dw     双字（Double Word）
+fn     函数（Function）
+h      Handle（句柄）
+i      整形（Int）
+l      长整型（Long Int）
+lp     长指针（Long Pointer）
+m_     类成员（Class Member）
+n      短整型（Short Int）
+np     近程指针（Near Pointer）
+p      指针（Pointer）
+s      字符串（String）
+sz     以 Null 做结尾的字符串型（String with Zero End）
+w      字（Word）
+</code></pre></div>
+<p>还有其他更多的前缀是根据微软自己的 MFC/句柄/控件/结构等东西定义的，就不过多描述了。</p>
+<h3 id="帕斯卡命名法">帕斯卡命名法<a class="headerlink" href="#帕斯卡命名法" title="Permanent link">&para;</a></h3>
+<p>帕斯卡命名法，又叫大驼峰式命名法。</p>
+<p>与小驼峰式命名法的最大区别在于，每个单词的第一个字母都要大写。</p>
+<div class="language-java highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #B00040">int</span><span style="color: #bbbbbb"> </span>MyAge;
+<span style="color: #B00040">char</span><span style="color: #bbbbbb"> </span>MyName<span style="color: #666666">[10]</span>;
+<span style="color: #B00040">float</span><span style="color: #bbbbbb"> </span>ManHeight;
+</code></pre></div>
+<p>二者都是采用了帕斯卡命名法。</p>
+<h3 id="下划线命名法">下划线命名法<a class="headerlink" href="#下划线命名法" title="Permanent link">&para;</a></h3>
+<p>下划线命名法并不如大小驼峰式命名法那么备受推崇，但是也是浓墨重彩的一笔。尤其在宏定义和常量中使用比较多，通过下划线来分割全部都是大写的单词。</p>
+<p>该命名规范，也是很简单，要求单词与单词之间通过下划线连接即可。</p>
+<div class="language-c highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #B00040">int</span><span style="color: #bbbbbb"> </span>my_age;
+<span style="color: #B00040">char</span><span style="color: #bbbbbb"> </span>my_name[<span style="color: #666666">10</span>];
+<span style="color: #B00040">float</span><span style="color: #bbbbbb"> </span>man_height;
+</code></pre></div>
+<h2 id="命名的基本原则">命名的基本原则<a class="headerlink" href="#命名的基本原则" title="Permanent link">&para;</a></h2>
+<details>
+<summary>(1)标识符的命名要清晰、明了，有明确含义，同时使用完整的单词或大家基本可以理解的缩写</summary>
+<p>避免使人产生误解——尽量采用采用英文单词或全部中文全拼表示，若出现英文单词和中文混合定义时，使用连字符<strong>“_”</strong>将英文与中文割开。较短的单词可通过去掉“<strong>元音</strong>”形成缩写；较长的单词可取单词的头几个字母形成缩写；一些单词有大家公认的缩写。例如：<code>temp</code>-&gt;<code>tmp</code>、<code>flag</code>-&gt;<code>flg</code>、<code>statistic</code>-&gt;<code>stat</code>、<code>increment</code>-&gt;<code>inc</code>、<code>message</code>-&gt;<code>msg</code>等缩写能够被大家基本认可。</p>
+</details>
+<details>
+<summary>(2)命名中若使用特殊约定或缩写，则要有注释说明</summary>
+<p>应该在源文件的开始之处，对文件中所使用的缩写或约定，特别是特殊的缩写，进行必要的注释说明。</p>
+</details>
+<details>
+<summary>(3)命名规范必须与所使用的系统风格保持一致，并在同一项目中统一</summary>
+<p>为了项目后期的方便运维和理解以及再次开发。</p>
+</details>
+<details>
+<summary>(4)对于变量命名，禁止取单个字符(如i 、j 、k... )</summary>
+<p>建议除了要有具体含义外，还能表明其变量类型、数据类型等，但<code>i</code> 、<code>j</code> 、<code>k</code> 作局部循环变量是允许的。变量，尤其是局部变量，如果用单个字符表示，很容易敲错(如<code>i</code>写成<code>j</code>)，而编译时又检查不出来，有可能为了这个小小的错误而花费大量的查错时间。</p>
+</details>
+<h2 id="编程单词缩写规则">编程单词缩写规则<a class="headerlink" href="#编程单词缩写规则" title="Permanent link">&para;</a></h2>
+<ol>
+<li>大于2个单词则采用缩写规则，否则不用缩写。</li>
+<li>
+<p>缩写的规则采用国际惯用方法：</p>
+<p>元音字母剔除法，首字母除外。</p>
+<p>使用单词的头一个或几个字母。</p>
+</li>
+</ol>
+<details>
+<summary>组合单词使用规则</summary>
+<ol>
+<li>使用变量名中每个有典型意义的单词。如Count of Failure写成FailCnt。</li>
+<li>去掉无用的单词后缀 ing, ed等。如Paging Request写成PagReq。</li>
+</ol>
+</details>
+<p>参考缩写项目: <a href="https://github.com/dablelv/identifier-abbr/tree/main" target="_blank">identifier-abbr</a></p>
+<h3 id="a">A<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td align="center">Addition</td>
+<td align="center">Add‍</td>
+<td align="center">除了</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Accumulator</td>
+<td align="center">Acc</td>
+<td align="center">蓄电池</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Address</td>
+<td align="center">Addr</td>
+<td align="center">地址</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Action</td>
+<td align="center">Act</td>
+<td align="center">行动</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Active</td>
+<td align="center">Act</td>
+<td align="center">活跃的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Amplitude</td>
+<td align="center">Amp</td>
+<td align="center">振幅</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Analog Input</td>
+<td align="center">AI</td>
+<td align="center">模拟输入</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Anolog I/O</td>
+<td align="center">AIO</td>
+<td align="center">模拟输入/输出</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">All</td>
+<td align="center">All</td>
+<td align="center">所有</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Alarm</td>
+<td align="center">Alm</td>
+<td align="center">报警</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Allocate</td>
+<td align="center">Alloc</td>
+<td align="center">分配</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Analog Output</td>
+<td align="center">AO</td>
+<td align="center">模拟输出</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Apparent</td>
+<td align="center">App</td>
+<td align="center">明显的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Argument</td>
+<td align="center">Arg</td>
+<td align="center">参数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Arrange</td>
+<td align="center">Arrng</td>
+<td align="center">数列</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Array</td>
+<td align="center">Array</td>
+<td align="center">数组</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Assemble</td>
+<td align="center">Asm</td>
+<td align="center">集合/组合/聚集/组成/聚合</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Attribute</td>
+<td align="center">Attrib</td>
+<td align="center">属性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b">B<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">B</td>
+<td align="center">Bar</td>
+<td align="center">Bar</td>
+<td align="center">酒吧/珊/块</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Bit</td>
+<td align="center">Bit</td>
+<td align="center">位/</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Byte</td>
+<td align="center">Byte</td>
+<td align="center">字节</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Block</td>
+<td align="center">Blk</td>
+<td align="center">块</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Buffer</td>
+<td align="center">Buf</td>
+<td align="center">缓冲</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Button</td>
+<td align="center">Btn</td>
+<td align="center">按钮</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Bypass</td>
+<td align="center">Bypass</td>
+<td align="center">绕过/分流</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c">C<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">C</td>
+<td align="center">Calibration</td>
+<td align="center">Cal</td>
+<td align="center">校准</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Calculate</td>
+<td align="center">Calc</td>
+<td align="center">计算</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Category</td>
+<td align="center">cate</td>
+<td align="center">分类</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Configuration</td>
+<td align="center">Cfg</td>
+<td align="center">配置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Channel</td>
+<td align="center">Ch</td>
+<td align="center">通道/渠道</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Change</td>
+<td align="center">Chg</td>
+<td align="center">改变</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Check</td>
+<td align="center">Chk</td>
+<td align="center">检查</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Clock</td>
+<td align="center">Clk</td>
+<td align="center">时钟</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Clear</td>
+<td align="center">Clr</td>
+<td align="center">清晰的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Clear Screen</td>
+<td align="center">Cls</td>
+<td align="center">清晰的屏幕</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Command</td>
+<td align="center">Cmd</td>
+<td align="center">命令</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Compare</td>
+<td align="center">Cmp</td>
+<td align="center">比较</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Complete</td>
+<td align="center">Comp</td>
+<td align="center">完整的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Count</td>
+<td align="center">Cnt</td>
+<td align="center">数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Counter</td>
+<td align="center">Ctr</td>
+<td align="center">计数器</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Column</td>
+<td align="center">Col</td>
+<td align="center">列</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Communication</td>
+<td align="center">Comm</td>
+<td align="center">沟通</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Connect</td>
+<td align="center">Con</td>
+<td align="center">连接</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Construct</td>
+<td align="center">Cons</td>
+<td align="center">构造</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Control</td>
+<td align="center">Ctrl</td>
+<td align="center">控制</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Context</td>
+<td align="center">Ctx</td>
+<td align="center">上下文</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Convert</td>
+<td align="center">Conv</td>
+<td align="center">转换</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Copy</td>
+<td align="center">Cp</td>
+<td align="center">复制</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Current</td>
+<td align="center">Cur</td>
+<td align="center">当前的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Cursor</td>
+<td align="center">Csr</td>
+<td align="center">光标</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Control Word</td>
+<td align="center">CW</td>
+<td align="center">控制字</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d">D<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">D</td>
+<td align="center">Date</td>
+<td align="center">Date</td>
+<td align="center">日期</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Day</td>
+<td align="center">Day</td>
+<td align="center">一天</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Debounce</td>
+<td align="center">Debounce</td>
+<td align="center">防反跳</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Decrease</td>
+<td align="center">Dec</td>
+<td align="center">减少</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Decimal</td>
+<td align="center">Dec</td>
+<td align="center">小数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Decode</td>
+<td align="center">Decode</td>
+<td align="center">解码</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Define</td>
+<td align="center">Def</td>
+<td align="center">定义</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Degree</td>
+<td align="center">Deg</td>
+<td align="center">学位</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Delete</td>
+<td align="center">Del</td>
+<td align="center">删除</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Destination</td>
+<td align="center">Dst</td>
+<td align="center">目的地</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Descriptor</td>
+<td align="center">Desc</td>
+<td align="center">描述符</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Device</td>
+<td align="center">Dev</td>
+<td align="center">设备</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Discrete Input</td>
+<td align="center">DI</td>
+<td align="center">离散输入</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Digit</td>
+<td align="center">Dig</td>
+<td align="center">数字</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Discrete I/O</td>
+<td align="center">DIO</td>
+<td align="center">离散I / O</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Discrete Output(s)</td>
+<td align="center">DO</td>
+<td align="center">离散输出(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Disable</td>
+<td align="center">Dis</td>
+<td align="center">禁用</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Display</td>
+<td align="center">Disp</td>
+<td align="center">显示</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Discovery</td>
+<td align="center">Disc</td>
+<td align="center">发现</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Division</td>
+<td align="center">Div</td>
+<td align="center">部门</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Divisor/Division</td>
+<td align="center">Div</td>
+<td align="center">除数/部门</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Delay</td>
+<td align="center">Dly</td>
+<td align="center">延迟</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Day-of-week</td>
+<td align="center">DOW</td>
+<td align="center">一周中的第几天</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Down</td>
+<td align="center">Down</td>
+<td align="center">下来</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Dummy</td>
+<td align="center">Dummy</td>
+<td align="center">假</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Dynamic</td>
+<td align="center">Dyn</td>
+<td align="center">动态</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e">E<a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">E</td>
+<td align="center">Edge</td>
+<td align="center">Edge</td>
+<td align="center">边缘</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Effective</td>
+<td align="center">Eff</td>
+<td align="center">有效的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Electric</td>
+<td align="center">Elec</td>
+<td align="center">电</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Empty</td>
+<td align="center">Empty</td>
+<td align="center">空</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Enable</td>
+<td align="center">En</td>
+<td align="center">启用</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Engine</td>
+<td align="center">Eng</td>
+<td align="center">引擎</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Enter</td>
+<td align="center">Enter</td>
+<td align="center">输入</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Entries</td>
+<td align="center">Entries</td>
+<td align="center">条目</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Equivalent</td>
+<td align="center">Equiv</td>
+<td align="center">等效</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Error(s)</td>
+<td align="center">Err</td>
+<td align="center">错误(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Ethernet</td>
+<td align="center">Eth</td>
+<td align="center">以太网</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Engineering Units</td>
+<td align="center">EU</td>
+<td align="center">工程单位</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Event(s)</td>
+<td align="center">Event</td>
+<td align="center">事件(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Extension</td>
+<td align="center">Ext</td>
+<td align="center">扩展</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Exit</td>
+<td align="center">Exit</td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Exception</td>
+<td align="center">Exc</td>
+<td align="center">异常</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Expiration</td>
+<td align="center">Exp</td>
+<td align="center">过期</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Exponent</td>
+<td align="center">Exp</td>
+<td align="center">指数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f">F<a class="headerlink" href="#f" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">F</td>
+<td align="center">Field</td>
+<td align="center">Fld</td>
+<td align="center">场</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Flag</td>
+<td align="center">Flag</td>
+<td align="center">国旗</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Flush</td>
+<td align="center">Flush</td>
+<td align="center">冲洗</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Function(s)</td>
+<td align="center">Fnct</td>
+<td align="center">函数(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Format</td>
+<td align="center">Format</td>
+<td align="center">格式</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Fraction</td>
+<td align="center">Fract</td>
+<td align="center">分数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Free</td>
+<td align="center">Free</td>
+<td align="center">免费的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Frequency</td>
+<td align="center">Freq</td>
+<td align="center">频率</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Full</td>
+<td align="center">Full</td>
+<td align="center">完整的</td>
+</tr>
+</tbody>
+</table>
+<h3 id="g">G<a class="headerlink" href="#g" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">G</td>
+<td align="center">Gain</td>
+<td align="center">Gain</td>
+<td align="center">获得</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Get</td>
+<td align="center">Get</td>
+<td align="center">得到</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Generate</td>
+<td align="center">Gen</td>
+<td align="center">生成</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Group(s)</td>
+<td align="center">Grp</td>
+<td align="center">集团(年代)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="h">H<a class="headerlink" href="#h" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">H</td>
+<td align="center">Handler</td>
+<td align="center">Handler</td>
+<td align="center">处理程序</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Harmonic</td>
+<td align="center">Harm</td>
+<td align="center">谐波</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Hexadecimal</td>
+<td align="center">Hex</td>
+<td align="center">十六进制</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">High</td>
+<td align="center">Hi</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">History</td>
+<td align="center">Hist</td>
+<td align="center">历史</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Hit</td>
+<td align="center">Hit</td>
+<td align="center">打击</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">High Priority Task</td>
+<td align="center">HPT</td>
+<td align="center">高优先级任务</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Hour(s)</td>
+<td align="center">Hr</td>
+<td align="center">小时(年代)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i">I<a class="headerlink" href="#i" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">I</td>
+<td align="center">I.D.</td>
+<td align="center">Id</td>
+<td align="center">身份证</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Idle</td>
+<td align="center">Idle</td>
+<td align="center">闲置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Impulse</td>
+<td align="center">Imp</td>
+<td align="center">冲动</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Input(s)</td>
+<td align="center">In</td>
+<td align="center">输入(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Initialization</td>
+<td align="center">Init</td>
+<td align="center">初始化</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Initialize</td>
+<td align="center">Init</td>
+<td align="center">初始化</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Instruction</td>
+<td align="center">Instr</td>
+<td align="center">指令</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Interrupt</td>
+<td align="center">Int</td>
+<td align="center">中断</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Invert</td>
+<td align="center">Inv</td>
+<td align="center">反</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Interrupt Service Routine</td>
+<td align="center">ISR</td>
+<td align="center">中断服务例程</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Index</td>
+<td align="center">Ix</td>
+<td align="center">指数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="k">K<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">K</td>
+<td align="center">Key</td>
+<td align="center">Key</td>
+<td align="center">关键</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Keyboard</td>
+<td align="center">Key</td>
+<td align="center">键盘</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Key Word</td>
+<td align="center">Kw</td>
+<td align="center">关键字</td>
+</tr>
+</tbody>
+</table>
+<h3 id="l">L<a class="headerlink" href="#l" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">L</td>
+<td align="center">Length</td>
+<td align="center">Len</td>
+<td align="center">长度</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Limit</td>
+<td align="center">Lim</td>
+<td align="center">限制</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">List</td>
+<td align="center">List</td>
+<td align="center">列表</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Low</td>
+<td align="center">Lo</td>
+<td align="center">低</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Lower</td>
+<td align="center">Le</td>
+<td align="center">较低的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Lowest</td>
+<td align="center">Lo</td>
+<td align="center">最低</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Lock</td>
+<td align="center">Lock</td>
+<td align="center">锁</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Low Priority Task</td>
+<td align="center">LTP</td>
+<td align="center">低优先级的任务</td>
+</tr>
+</tbody>
+</table>
+<h3 id="m">M<a class="headerlink" href="#m" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">M</td>
+<td align="center">Magnitude</td>
+<td align="center">Mag</td>
+<td align="center">级</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Mantissa</td>
+<td align="center">Man</td>
+<td align="center">尾数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Manual</td>
+<td align="center">Man</td>
+<td align="center">手册</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Manufacture</td>
+<td align="center">Mfg</td>
+<td align="center">制造</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Maximum</td>
+<td align="center">Max</td>
+<td align="center">最大</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Mailbox</td>
+<td align="center">Mbox</td>
+<td align="center">邮箱</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Minimum</td>
+<td align="center">Min</td>
+<td align="center">最低</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Mode</td>
+<td align="center">Mode</td>
+<td align="center">模式</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Month</td>
+<td align="center">Month</td>
+<td align="center">月</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Move</td>
+<td align="center">Mov</td>
+<td align="center">移动</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Message</td>
+<td align="center">Msg</td>
+<td align="center">消息</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Measure</td>
+<td align="center">Meas</td>
+<td align="center">测量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Mask</td>
+<td align="center">Msk</td>
+<td align="center">面具</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Multiplication</td>
+<td align="center">Mul</td>
+<td align="center">乘法</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Multiplex</td>
+<td align="center">Mux</td>
+<td align="center">多路复用</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Make</td>
+<td align="center">Mk</td>
+<td align="center">使</td>
+</tr>
+</tbody>
+</table>
+<h3 id="n">N<a class="headerlink" href="#n" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">N</td>
+<td align="center">Negative</td>
+<td align="center">Neg</td>
+<td align="center">负</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Number of</td>
+<td align="center">Num</td>
+<td align="center">的数量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Nesting</td>
+<td align="center">Nesting</td>
+<td align="center">嵌套</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Neutral</td>
+<td align="center">Neut</td>
+<td align="center">中性</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">New</td>
+<td align="center">New</td>
+<td align="center">新</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Next</td>
+<td align="center">Next</td>
+<td align="center">下一个</td>
+</tr>
+</tbody>
+</table>
+<h3 id="o">O<a class="headerlink" href="#o" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">O</td>
+<td align="center">Offset</td>
+<td align="center">Offset</td>
+<td align="center">抵消</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Old</td>
+<td align="center">Old</td>
+<td align="center">老</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Operation System</td>
+<td align="center">OS</td>
+<td align="center">操作系统</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Optimize</td>
+<td align="center">Opt</td>
+<td align="center">优化</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Original</td>
+<td align="center">Orig</td>
+<td align="center">原始</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Output</td>
+<td align="center">Out</td>
+<td align="center">输出</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Overflow</td>
+<td align="center">Ovf</td>
+<td align="center">溢出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p">P<a class="headerlink" href="#p" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">P</td>
+<td align="center">Package</td>
+<td align="center">Pkg</td>
+<td align="center">包</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Parameter</td>
+<td align="center">Param</td>
+<td align="center">参数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Pass</td>
+<td align="center">Pass</td>
+<td align="center">通过</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Performance</td>
+<td align="center">Perf</td>
+<td align="center">性能</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Period</td>
+<td align="center">Per</td>
+<td align="center">期</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Phase</td>
+<td align="center">Ph</td>
+<td align="center">阶段</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Port</td>
+<td align="center">Port</td>
+<td align="center">港口</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Position</td>
+<td align="center">Pos</td>
+<td align="center">位置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Positive</td>
+<td align="center">Pos</td>
+<td align="center">积极的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Power</td>
+<td align="center">Pwr</td>
+<td align="center">权力</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Previous</td>
+<td align="center">Prev</td>
+<td align="center">以前的</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Priority</td>
+<td align="center">Prio</td>
+<td align="center">优先级</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Printer</td>
+<td align="center">Prt</td>
+<td align="center">打印机</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">process</td>
+<td align="center">Proc</td>
+<td align="center">过程</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Product</td>
+<td align="center">Prod</td>
+<td align="center">产品</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Protocol</td>
+<td align="center">Prot</td>
+<td align="center">协议</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Pointer</td>
+<td align="center">Ptr</td>
+<td align="center">指针</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Put</td>
+<td align="center">Put</td>
+<td align="center">把</td>
+</tr>
+</tbody>
+</table>
+<h3 id="q">Q<a class="headerlink" href="#q" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Q</td>
+<td align="center">Queue</td>
+<td align="center">Q</td>
+<td align="center">队列</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Quality</td>
+<td align="center">Qlty</td>
+<td align="center">质量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Quarter</td>
+<td align="center">Quar</td>
+<td align="center">季度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">R</td>
+<td align="center">Raw</td>
+<td align="center">Raw</td>
+<td align="center">生</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Reactive</td>
+<td align="center">React</td>
+<td align="center">无功</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Recall</td>
+<td align="center">Rcl</td>
+<td align="center">回忆</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Rectangle</td>
+<td align="center">Rect</td>
+<td align="center">矩形</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Read</td>
+<td align="center">Rd</td>
+<td align="center">读</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Ready</td>
+<td align="center">Rdy</td>
+<td align="center">准备好了</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Reference</td>
+<td align="center">Ref</td>
+<td align="center">参考</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Register</td>
+<td align="center">Reg</td>
+<td align="center">注册</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Request</td>
+<td align="center">Req</td>
+<td align="center">请求</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Reset</td>
+<td align="center">Reset</td>
+<td align="center">重置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Reserve</td>
+<td align="center">Resv</td>
+<td align="center">储备</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Resume</td>
+<td align="center">Resume</td>
+<td align="center">的简历</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Response</td>
+<td align="center">Resp</td>
+<td align="center">响应</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Return</td>
+<td align="center">Rtn</td>
+<td align="center">返回</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Reverse</td>
+<td align="center">Revs</td>
+<td align="center">反向</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Ring</td>
+<td align="center">Ring</td>
+<td align="center">环</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Row</td>
+<td align="center">Row</td>
+<td align="center">行</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Repeat</td>
+<td align="center">Rpt</td>
+<td align="center">重复</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Real-Time</td>
+<td align="center">RT</td>
+<td align="center">实时</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Running</td>
+<td align="center">Running</td>
+<td align="center">运行</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Receive</td>
+<td align="center">Rx</td>
+<td align="center">收到</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s">S<a class="headerlink" href="#s" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">S</td>
+<td align="center">Sample</td>
+<td align="center">Smp</td>
+<td align="center">样本</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Scale</td>
+<td align="center">Scale</td>
+<td align="center">规模</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Scale Factor</td>
+<td align="center">SF</td>
+<td align="center">比例因子</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Scaling</td>
+<td align="center">Scaling</td>
+<td align="center">扩展</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Scan</td>
+<td align="center">Scan</td>
+<td align="center">扫描</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Schedule</td>
+<td align="center">Sched</td>
+<td align="center">时间表</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Scheduler</td>
+<td align="center">Sched</td>
+<td align="center">调度器</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Screen</td>
+<td align="center">Scr</td>
+<td align="center">屏幕</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Second(s)</td>
+<td align="center">Sec</td>
+<td align="center">第二个(s)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Segment(s)</td>
+<td align="center">Seg</td>
+<td align="center">段(年代)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Select</td>
+<td align="center">Sel</td>
+<td align="center">选择</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Semaphore</td>
+<td align="center">Sem</td>
+<td align="center">信号量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Sequence</td>
+<td align="center">Seq</td>
+<td align="center">序列</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Server</td>
+<td align="center">Svr</td>
+<td align="center">服务器</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Set</td>
+<td align="center">Set</td>
+<td align="center">集</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Setting</td>
+<td align="center">Setting</td>
+<td align="center">设置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Signal</td>
+<td align="center">Sig</td>
+<td align="center">信号</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Size</td>
+<td align="center">Size</td>
+<td align="center">大小</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Seven-segments</td>
+<td align="center">SS</td>
+<td align="center">七段</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Sourse</td>
+<td align="center">Src</td>
+<td align="center">万恶之源</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Start</td>
+<td align="center">Start</td>
+<td align="center">开始</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Statistic(s)</td>
+<td align="center">Stat</td>
+<td align="center">统计(s)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Status</td>
+<td align="center">Stat</td>
+<td align="center">状态</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Stack</td>
+<td align="center">Stk</td>
+<td align="center">堆栈</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Standard</td>
+<td align="center">Std</td>
+<td align="center">标准</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Stop</td>
+<td align="center">Stop</td>
+<td align="center">停止</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">String</td>
+<td align="center">Str</td>
+<td align="center">字符串</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Subtraction</td>
+<td align="center">Sub</td>
+<td align="center">减法</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Suspend</td>
+<td align="center">Suspend</td>
+<td align="center">暂停</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Switch</td>
+<td align="center">Sw</td>
+<td align="center">开关</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Synchronize</td>
+<td align="center">Synch</td>
+<td align="center">同步</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">System</td>
+<td align="center">Syst</td>
+<td align="center">系统</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t">T<a class="headerlink" href="#t" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">T</td>
+<td align="center">Task</td>
+<td align="center">Task</td>
+<td align="center">任务</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Table</td>
+<td align="center">Tbl</td>
+<td align="center">表</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Threshold</td>
+<td align="center">Th</td>
+<td align="center">阈值</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Tick</td>
+<td align="center">Tick</td>
+<td align="center">蜱虫</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Time</td>
+<td align="center">Time</td>
+<td align="center">时间</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Timer</td>
+<td align="center">Tmr</td>
+<td align="center">计时器</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Toggle</td>
+<td align="center">Tgl</td>
+<td align="center">切换</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Total</td>
+<td align="center">Tot</td>
+<td align="center">总</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Trigger</td>
+<td align="center">Trig</td>
+<td align="center">触发</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Time-stamp</td>
+<td align="center">TS</td>
+<td align="center">时间戳</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Timeout</td>
+<td align="center">TO</td>
+<td align="center">超时</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u">U<a class="headerlink" href="#u" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">U</td>
+<td align="center">Unlock</td>
+<td align="center">Unlock</td>
+<td align="center">解锁</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Up</td>
+<td align="center">Up</td>
+<td align="center">向上</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Update</td>
+<td align="center">Update</td>
+<td align="center">更新</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Utility</td>
+<td align="center">Util</td>
+<td align="center">实用程序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v">V<a class="headerlink" href="#v" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">V</td>
+<td align="center">Value</td>
+<td align="center">Val</td>
+<td align="center">价值</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Vector</td>
+<td align="center">Vect</td>
+<td align="center">向量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Version</td>
+<td align="center">Ver</td>
+<td align="center">版本</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Variable</td>
+<td align="center">Var</td>
+<td align="center">变量</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Visible</td>
+<td align="center">Vis</td>
+<td align="center">可见</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Voltage</td>
+<td align="center">Vol</td>
+<td align="center">电压</td>
+</tr>
+</tbody>
+</table>
+<h3 id="w">W<a class="headerlink" href="#w" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">W</td>
+<td align="center">Watchdog</td>
+<td align="center">Wdog</td>
+<td align="center">监管机构</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Write</td>
+<td align="center">Wr</td>
+<td align="center">写</td>
+</tr>
+</tbody>
+</table>
+<h3 id="y">Y<a class="headerlink" href="#y" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">描述</th>
+<th align="center">缩写词</th>
+<th align="center">机翻中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Y</td>
+<td align="center">Year</td>
+<td align="center">Year</td>
+<td align="center">一年</td>
+</tr>
+</tbody>
+</table>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月4日</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月4日</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "content.tabs.link", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.prune", "navigation.instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
